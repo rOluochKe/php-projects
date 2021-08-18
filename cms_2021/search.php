@@ -26,7 +26,7 @@ include "includes/header.php";
                 $count = mysqli_num_rows($search_query);
 
                 if ($count == 0) {
-                    echo "<h1>No Result matches your search, try a different word</h1>";
+                    echo "<h3>No Result matches your search, try a different word</h3>";
                 } else {
                     $query = "SELECT * FROM posts";
                     $select_all_posts_query = mysqli_query($connection, $query);
