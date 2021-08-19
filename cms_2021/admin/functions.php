@@ -1,4 +1,12 @@
 <?php
+function confirmQuery($result)
+{
+    global $connection;
+
+    if (!$result) {
+        die("QUERY FAILED ." . mysqli_error($connection));
+    }
+}
 
 function insert_categories()
 {
@@ -26,7 +34,7 @@ function findAllCategories()
 {
     global $connection;
 
-    $query = "SELECT * FROM categories LIMIT 5";
+    $query = "SELECT * FROM categories";
     $select_categories = mysqli_query($connection, $query);
 
     while ($row = mysqli_fetch_assoc($select_categories)) {
